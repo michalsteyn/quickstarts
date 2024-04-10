@@ -1,5 +1,10 @@
 {
   "profiles": {
+    "Default": {
+      "commandName": "Project",
+      "environmentVariables": {
+      }
+    },
     "WorkflowConsoleApp": {
       "commandName": "Project",
       "environmentVariables": {

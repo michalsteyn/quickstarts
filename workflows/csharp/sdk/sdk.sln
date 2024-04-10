@@ -8,11 +8,14 @@ EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2CB623FC-5DED-4D88-A88D-B969A49EE3CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{58C4D448-51B7-4135-BD33-F5898720773D}"
+	ProjectSection(SolutionItems) = preProject
+		dapr\config.yaml = dapr\config.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{AD8198E2-AEBC-4F8A-8F0D-E8D0686A06E9}"
 	ProjectSection(SolutionItems) = preProject
-		components\pubsub.yaml = components\pubsub.yaml
-		components\state_redis.yaml = components\state_redis.yaml
+		dapr\components\pubsub.yaml = dapr\components\pubsub.yaml
+		dapr\components\state_redis.yaml = dapr\components\state_redis.yaml
 	EndProjectSection
 EndProject
 Global

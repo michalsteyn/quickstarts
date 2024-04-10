@@ -18,11 +18,12 @@ services:
      "--app-protocol", "http",
      "--app-max-concurrency", "-1",
      # "-dapr-grpc-port", "50002"
-     "-components-path", "/components",
+     "-components-path", "/dapr/components",
+     "-config", "/dapr/config.yaml",
      "--profile-port", "-1"
      ]
     volumes:
-        - "./components/:/components"
+        - "./dapr:/dapr"
     depends_on:
       - workflowconsoleapp
     network_mode: "service:workflowconsoleapp"
