@@ -1,0 +1,52 @@
+version: '3.4'
+
+services:
+  workflowconsoleapp:
+    image: ${DOCKER_REGISTRY-}workflowconsoleapp
+    build:
+      context: .
+      dockerfile: order-processor/Dockerfile
+    networks:
+      - localnet
+  workflowconsoleapp-dapr:
+    image: "daprio/daprd:edge"
+    command: ["./daprd",
+     "-app-id", "order-processor",
+     "-app-port", "0",
+     # "-placement-host-address", "placement:50005",
+     "-placement-host-address", "host.docker.internal:6050",
+     "--app-protocol", "http",
+     "--app-max-concurrency", "-1",
+     # "-dapr-grpc-port", "50002"
+     "-components-path", "/components",
+     "--profile-port", "-1"
+     ]
+    volumes:
+        - "./components/:/components"
+    depends_on:
+      - workflowconsoleapp
+    network_mode: "service:workflowconsoleapp"
+  ############################
+  # Dapr placement service
+  ############################
+  # placement:
+  #   image: "daprio/dapr"
+  #   command: ["./placement", "-port", "50005"]
+  #   ports:
+  #     - "50005:50005"
+  #   networks:
+  #     - localnet
+  ############################
+  # Redis state store
+  ############################
+  # redis:
+  #   image: "redis:alpine"
+  #   ports:
+  #     - "6380:6379"
+  #   networks:
+  #     - localnet
+
+networks:
+  localnet:
+    driver: bridge
+    name: localnet

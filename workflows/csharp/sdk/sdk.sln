@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkflowConsoleApp", "order-processor\WorkflowConsoleApp.csproj", "{B9405F35-65CD-43F5-B81D-2D4B8A88CA8A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2CB623FC-5DED-4D88-A88D-B969A49EE3CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{58C4D448-51B7-4135-BD33-F5898720773D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{AD8198E2-AEBC-4F8A-8F0D-E8D0686A06E9}"
+	ProjectSection(SolutionItems) = preProject
+		components\pubsub.yaml = components\pubsub.yaml
+		components\state_redis.yaml = components\state_redis.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9405F35-65CD-43F5-B81D-2D4B8A88CA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9405F35-65CD-43F5-B81D-2D4B8A88CA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9405F35-65CD-43F5-B81D-2D4B8A88CA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9405F35-65CD-43F5-B81D-2D4B8A88CA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CB623FC-5DED-4D88-A88D-B969A49EE3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CB623FC-5DED-4D88-A88D-B969A49EE3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CB623FC-5DED-4D88-A88D-B969A49EE3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CB623FC-5DED-4D88-A88D-B969A49EE3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD8198E2-AEBC-4F8A-8F0D-E8D0686A06E9} = {58C4D448-51B7-4135-BD33-F5898720773D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E46CC29-E78D-4FA4-897E-7393ABB69678}
+	EndGlobalSection
+EndGlobal

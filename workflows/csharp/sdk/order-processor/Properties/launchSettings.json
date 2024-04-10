@@ -1,0 +1,45 @@
+{
+  "profiles": {
+    "WorkflowConsoleApp": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DAPR_GRPC_PORT": "57253",
+        "DAPR_HTTP_PORT": "57252",
+        "DAPR_METRICS_PORT": "57254"
+      }
+    },
+    "Dapr-PWSH": {
+      "commandName": "Executable",
+      "executablePath": "pwsh",
+      "commandLineArgs": "-Command \"dapr run -f .\"",
+      "workingDirectory": "../.",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "nativeDebugging": true
+    },
+    "Dapr-PWSH-1": {
+      "commandName": "Executable",
+      "executablePath": "pwsh",
+      "commandLineArgs": "-Command \"dapr run --app-id order-processor -- dotnet run --no-build\"",
+      "workingDirectory": ".",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "nativeDebugging": true
+    },
+    "Dapr-PWSH-2": {
+      "commandName": "Executable",
+      "executablePath": "pwsh",
+      "commandLineArgs": "-Command \"dapr run --app-id mydaprapp --app-port 5000 --dapr-http-port 5005 --dapr-grpc-port 5006 -- dotnet run --no-build\"",
+      "workingDirectory": ".",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "nativeDebugging": true
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
