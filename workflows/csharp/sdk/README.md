@@ -22,6 +22,13 @@ I added a `dapr` directory that contains the component config and the dapr infra
 Take a look at the docker compose file for the sidecar config. Important to note is the dapr app id, 
 the component directory. 
 
+Also note: The networking in this example does NOT use the Docker routing directly, it uses the 
+local machine as a proxy. So it uses the external ports that docker maps to the physical machine.
+
+On Windows that is the special host name: `host.docker.internal`
+
+This is configured in the Docker Compose file as well as the Component Config Files.
+
 # Dapr workflows
 
 In this quickstart, you'll create a simple console application to demonstrate Dapr's workflow programming model and the workflow management API. The console app starts and manages the lifecycle of a workflow that stores and retrieves data in a state store.
