@@ -1,3 +1,27 @@
+# Docker Compose Mods
+
+Init Dapr using:
+
+`dapr init --dev`
+
+This will install Dapr in Docker + Redis + Zipkin
+
+You can also specify a Docker Network using:
+
+`dapr init --dev --network localnet`
+
+But note, this will then NOT expose the Dapr Ports.
+
+The important mod is to add Docker support to the .Net Project. Simply right clock on the Project in VS and 
+select Add Docker Support.
+
+Then add Docker Compose, right click on the Project and select: `Add container orgastration support`
+
+I added a `dapr` directory that contains the component config and the dapr infra config. 
+
+Take a look at the docker compose file for the sidecar config. Important to note is the dapr app id, 
+the component directory. 
+
 # Dapr workflows
 
 In this quickstart, you'll create a simple console application to demonstrate Dapr's workflow programming model and the workflow management API. The console app starts and manages the lifecycle of a workflow that stores and retrieves data in a state store.
